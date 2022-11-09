@@ -1,0 +1,20 @@
+ <button type="submit" data-bs-toggle="modal" data-bs-target="#post-modal" class="btn btn-primary">Create New Post</button>
+
+    {{>post-modal}}
+
+
+{{#if posts.length}}
+<section class="mt-3">
+  <h2>Your Posts</h2>
+  <ul>
+    {{#each posts as |post|}}
+    <li class="mb-3">
+      {{> post-info post is-logged-in=../loggedIn dashboard=true}}
+    </li>
+    {{/each}}
+  </ul>
+</section>
+{{/if}}
+
+<script type="module" src="/javascript/add-post.js"></script>
+<script type="module" src="/javascript/utils.js"></script>
