@@ -2,7 +2,7 @@ const express = require('express');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
 
-const { addHook } = require('./models/User');
+// const { addHook } = require('./models/User');
 const path = require('path');
 const helpers = require('./utils/helpers');
 const exphbs = require('express-handlebars');
@@ -34,7 +34,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-sequelize.sync({ force: false })
-    .then(() => {
-        app.listen(PORT, () => console.log(`Rolling deep on port ${PORT}!!`));
-    });
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => console.log(`Rolling deep on port ${PORT}!!`));
+  });
