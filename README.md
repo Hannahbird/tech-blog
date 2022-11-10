@@ -27,7 +27,7 @@ Demonstrates usage theory and implementation of model/view/controller, building 
 ### You're Good to Go!
 
 - From the ../cms-blog directory - `npm start`
-- Use an api tool such as Insomnia or Postman to test the apis or go directly to the [local site](http://localhost:3001)
+
 
 ## Deployed Link
 
