@@ -36,6 +36,7 @@ async function signupFormHandler(event) {
     }
     else {
             modalAlerts(alert,'warning','All fields must be completed')
+            resetModalHandler();
     }
 }
 

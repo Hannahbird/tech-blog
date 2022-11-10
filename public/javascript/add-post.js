@@ -10,24 +10,33 @@ async function newFormHandler(event) {
 
     const alert = document.querySelector('#post-modal-alert')
 
-    const response = await fetch('/api/posts', {
-        method: 'POST',
-        body: JSON.stringify({
-            title,
-            post_text
-        }),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
+        const response = await fetch('/api/posts', {
+            method: 'POST',
+            body: JSON.stringify({
+                title,
+                post_text
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
 
-    if (response.ok) {
-        modalAlerts(alert,'success','Post created!')
-        document.location.replace('/dashboard');
-    }
-    else {
-        modalAlerts(alert, 'error', 'All fields must be completed');
-    }
+        if (response.ok) {
+            modalAlerts(alert, 'success', 'Created successfully!')
+            document.location.replace('/dashboard');
+        }
+        else {
+            modalAlerts(alert, 'error', 'All fields must be completed!');
+            resetModalHandler();
+        }
+
+}
+
+function resetModalHandler() {
+    setTimeout(() => {
+        const alert = document.querySelector('#login-modal-alert');
+        modalAlerts(alert, 'info', 'Give your post a title!');
+    },2000)
 }
 
 document.querySelector('#create-post-btn').addEventListener('click', newFormHandler);
