@@ -26,7 +26,7 @@ Demonstrates usage theory and implementation of model/view/controller, building 
 
 ### You're Good to Go!
 
-- From the ../cms-blog directory - `npm start`
+- `npm start`
 
 
 ## Deployed Link
